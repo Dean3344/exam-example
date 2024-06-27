@@ -1,0 +1,11 @@
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\bin\Debug\net7.0\ExamApiNet7.Domain.deps.json
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\bin\Debug\net7.0\ExamApiNet7.Domain.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\bin\Debug\net7.0\ExamApiNet7.Domain.pdb
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\ExamApiNet7.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\ExamApiNet7.Domain.AssemblyInfoInputs.cache
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\ExamApiNet7.Domain.AssemblyInfo.cs
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\ExamApiNet7.Domain.csproj.CoreCompileInputs.cache
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\ExamApiNet7.Domain.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\refint\ExamApiNet7.Domain.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\ExamApiNet7.Domain.pdb
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Domain\obj\Debug\net7.0\ref\ExamApiNet7.Domain.dll

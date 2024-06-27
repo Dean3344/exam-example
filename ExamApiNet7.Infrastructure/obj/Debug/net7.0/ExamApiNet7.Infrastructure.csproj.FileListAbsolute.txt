@@ -1,0 +1,17 @@
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\bin\Debug\net7.0\ExamApiNet7.Infrastructure.deps.json
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\bin\Debug\net7.0\ExamApiNet7.Infrastructure.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\bin\Debug\net7.0\ExamApiNet7.Infrastructure.pdb
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\bin\Debug\net7.0\ExamApiNet7.Domain.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\bin\Debug\net7.0\ExamApiNet7.Domain.pdb
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.csproj.AssemblyReference.cache
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.AssemblyInfoInputs.cache
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.AssemblyInfo.cs
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.csproj.CoreCompileInputs.cache
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiN.1515647F.Up2Date
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\refint\ExamApiNet7.Infrastructure.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.pdb
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ref\ExamApiNet7.Infrastructure.dll
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\bin\Debug\net7.0\ExamApiNet7.Infrastructure.runtimeconfig.json
+D:\projects\source\exam\ExamApiNet7\ExamApiNet7.Infrastructure\obj\Debug\net7.0\ExamApiNet7.Infrastructure.genruntimeconfig.cache
