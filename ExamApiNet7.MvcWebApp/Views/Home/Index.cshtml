@@ -1,0 +1,228 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+
+<div id="user-app">
+
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#user-create-modal" v-on:click="openCreateModal">
+		New User
+	</button>
+
+	<div v-if="users.length === 0">No Records.</div>
+	<table v-else class="table table-striped">
+		<thead><tr><td>Id</td><td>Account</td><td>Full Name</td><td>Gender</td><td>Birthday</td><td>Email</td><td>Create Date</td><td></td></></tr></thead>
+		<tr v-for="(user, index) in users">
+			<td>
+				{{user.id}}
+			</td>
+			<td>
+				{{user.accountName}}
+			</td>
+			<td>
+				{{user.fullName}}
+			</td>
+			<td>
+				{{user.gender}}
+			</td>
+			<td>
+				{{moment(user.birthday).format("YYYY-MM-DD")}}
+			</td>
+			<td>
+				{{user.email}}
+			</td>
+			<td>
+				{{moment(user.createTime).format("YYYY-MM-DD HH:MI:SS")}}
+			</td>
+			<td>
+				<button type="button" class="btn btn-link" v-on:click="openUpdateModal(user.id)">Edit</button>
+				<button type="button" class="btn btn-link" v-on:click="deleteUser(user.id)">Delete</button>
+			</td>
+
+		</tr>
+	</table>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="user-create-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">{{mode ==='create' ? 'Create User' : 'Edit User'}}</h5>
+
+
+
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form v-on:submit.prevent="onSubmit">
+					<div class="modal-body">
+
+						<div class="mb-3">
+							<label for="account-name" class="form-label">Account Name<span style="color:red">*</span></label>
+							<input type="text" class="form-control" id="account-name" placeholder="" required v-model="currentUser.accountName">
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Name<span style="color:red">*</span></label>
+							<input type="text" class="form-control" id="given-name" placeholder="Given Name" required v-model="currentUser.givenName">
+							<input type="text" class="form-control" id="family-name" placeholder="Family Name" required v-model="currentUser.familyName">
+
+						</div>
+						<div class="mb-3">
+							<label class="form-label">Gender<span style="color:red">*</span></label>
+							<select class="form-select" aria-label="Default select example" required v-model="currentUser.gender">
+								<option value="M">M</option>
+								<option value="F">F</option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label for="birthday" class="form-label">Birthday<span style="color:red">*</span></label>
+							<input type="date" class="form-control" id="birthday" placeholder="" required v-model.date="currentUser.birthday">
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email<span style="color:red">*</span></label>
+							<input type="email" class="form-control" id="email" placeholder="" required v-model="currentUser.email">
+						</div>
+						<div class="mb-3">
+							<label for="phone-no" class="form-label">Phone No<span style="color:red">*</span></label>
+							<input type="text" class="form-control" id="phone-no" placeholder="" required v-model="currentUser.phone">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Save changes</button>
+
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+@section scripts {
+	<script>
+
+
+
+		const userApp = {
+			data() {
+				return {
+					users: [],
+					currentUser: {},
+					createModal: {},
+					mode: ''
+				}
+			},
+			methods: {
+				moment: moment,
+				fetchUsers: async function() {
+					fetch("https://localhost:7083/user/list")
+						.then(res => res.json())
+						.then(data => this.users = data);
+				},
+				createUser: function() {
+		
+					fetch("https://localhost:7083/user", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(this.currentUser),
+					})
+					.then((res) => {
+						if (res.ok) {
+							this.fetchUsers();
+							this.createModal.hide();
+							this.currentUser = {};
+						} else if (res.status = 400) {
+						}
+						else {
+							alert("error")
+						}
+					})
+
+				},
+				updateUser: function () {
+
+						fetch("https://localhost:7083/user", {
+							method: "PUT",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify(this.currentUser),
+						})
+							.then((res) => {
+								if (res.ok) {
+									this.fetchUsers();
+									this.createModal.hide();
+									this.currentUser = {};
+								} else if (res.status = 400) {
+								}
+								else {
+									alert("error")
+								}
+							})
+
+				},
+				onSubmit:function(){
+					if (this.mode === 'create')
+						this.createUser();
+					else if(this.mode ==='update')
+						this.updateUser();
+				},
+				getUser: function (id) {
+					return fetch("https://localhost:7083/user?id=" + id, {
+						method: "GET",
+						headers: {
+							"Content-Type": "application/json",
+						},
+					});
+						
+				},
+				deleteUser(id) {
+					fetch("https://localhost:7083/user?id=" + id, {
+						method: "DELETE"
+					})
+					.then((res) => { 
+						if(res.ok){
+							this.fetchUsers();
+						}
+						else{
+							alert('error')
+						}
+					})
+				},
+				openCreateModal: function () {
+					this.mode = 'create';
+					this.currentUser = {};
+				},
+				openUpdateModal: function (id) {
+					this.mode = 'update';
+
+					let user = this.getUser(id);
+					
+					user.then((res) => {
+						if (res.ok) {
+							res.json().then(data => {
+							this.currentUser = data;
+							this.currentUser.birthday = this.moment(this.currentUser.birthday).format('YYYY-MM-DD')
+							this.createModal.show();
+								console.log(this.currentUser)
+							})
+						}
+						else {
+							alert('error')
+						}
+					});
+				},
+			},
+			mounted() {
+				this.fetchUsers();
+				this.createModal = new bootstrap.Modal(document.getElementById('user-create-modal'));
+			}
+				}
+		Vue.createApp(userApp).mount("#user-app")
+	</script>
+}
