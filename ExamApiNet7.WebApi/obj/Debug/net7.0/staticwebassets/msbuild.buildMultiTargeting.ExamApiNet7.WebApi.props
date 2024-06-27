@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ExamApiNet7.WebApi.props" />
+</Project>
